@@ -1,0 +1,21 @@
+@if(!displayForm){
+    @if(!isLoggedIn()){
+        <p (click)="toggleDisplay()">Login</p>
+    }
+    @else {
+        <p>{{activeUser().userName}}</p>
+        <p (click)="logout()">Logout</p>
+    }
+}
+@else {
+    <p (click)="toggleDisplay()">Close</p>
+    <input type="text" [(ngModel)]="username">
+    <input type="password" [(ngModel)]="password">
+
+    <button routerLink="/RegisterUser">New User? Register Here</button>
+    <button (click)="login(username, password)">Login</button>
+}
+
+
+
+

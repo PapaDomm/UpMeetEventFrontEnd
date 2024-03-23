@@ -1,0 +1,13 @@
+<app-header></app-header>
+<p>Home</p>
+<app-events-list></app-events-list>
+
+<br>
+@if(addEventDisplay){
+    <button (click)="toggleAddEventForm()">Close</button>
+    <br>
+    <app-add-event-form></app-add-event-form>
+}
+@else {
+    <button (click)="toggleAddEventForm()">Add New Event</button>
+}

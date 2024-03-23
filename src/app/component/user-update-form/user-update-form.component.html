@@ -1,0 +1,7 @@
+<input type="text" [(ngModel)]="firstName">
+<input type="text" [(ngModel)]="lastName">
+<input type="text" [(ngModel)]="userName">
+<input type="text" [(ngModel)]="bio">
+<input type="password" [(ngModel)]="password">
+<input type="file" (change)="onFileSelected($event)">
+<button (click)="uploadUser()">Update Info</button>

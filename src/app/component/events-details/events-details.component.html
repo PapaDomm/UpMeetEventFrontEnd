@@ -1,0 +1,33 @@
+<div>
+    <h2><a routerLink="/Event/{{displayEvent.eventId}}">{{displayEvent.name}}</a></h2>
+    <img [src]="createImgPath(displayEvent.image.path)" width="200px" height="200px">
+    <p>{{displayEvent.description}}</p>
+    <p>From {{displayEvent.startDate | date : 'shortDate'}} - {{displayEvent.endDate | date : 'shortDate'}}</p>
+    @if(isLoggedIn()){
+        @if(!containsEvent()){
+            <p (click)="addToFavs(displayEvent.eventId)" style="cursor: pointer;">Add To Your Favorites!</p>
+        }
+        @else {
+            <p (click)="removeFavs(displayEvent.eventId)" style="cursor: pointer;">Remove From Your Favorites</p>
+        }
+    }
+    @if(!displayUser){
+        <p (click)="toggleUserDisplay()">See Who's Going!</p>
+    }
+    @else {
+        <p (click)="toggleUserDisplay()">Close</p>
+        <ul>
+            @for(u of displayEvent.users; track $index){
+                <li>
+                    @if(u.image.path != null){
+                        <img [src]="createImgPath(u.image.path)"width="50px" height="50px">
+                    }
+                     
+                    <a routerLink="/Profile/{{u.userId}}">{{u.userName}}</a>
+                </li>
+            }
+            </ul>
+    }
+    
+</div>
+
