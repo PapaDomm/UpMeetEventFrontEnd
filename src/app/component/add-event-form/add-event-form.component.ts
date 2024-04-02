@@ -63,6 +63,7 @@ export class AddEventFormComponent {
       this.expired = '';
       this.eventForm = new FormData();
       // Change to reroute back to event page
+      this.eventService.setNewEvent(response);
       this.router.navigate(["/Home"])
     })
   }

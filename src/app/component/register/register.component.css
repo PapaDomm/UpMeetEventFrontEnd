@@ -1,0 +1,28 @@
+.formBox{
+    width: 75rem;
+    height: 50rem;
+    margin-top: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid black;
+    border-radius: 20%;
+    background-color: #EADF78;
+}
+
+.formBox:hover{
+    box-shadow: 1rem 1rem 1rem black;
+}
+
+.formButton{
+    border: 2px solid black;
+    background-color: #0C0D2F;
+    color: white;
+    border-radius: 10px;
+    width: 15rem;
+    margin-top: .2rem; 
+}
+
+.formButton:hover{
+    background-color: #63DED2;
+    box-shadow: .1rem .1rem .1rem black;
+}

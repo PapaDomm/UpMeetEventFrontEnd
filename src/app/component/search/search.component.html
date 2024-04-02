@@ -1,61 +1,92 @@
-<app-nav-bar></app-nav-bar>
-<input type="text" [(ngModel)]="nameFilter" (input)="filterEvents()">
-<input type="text" [(ngModel)]="cityFilter" (input)="filterEvents()">
-<select [(ngModel)]="stateFilter" (change)="filterEvents()">
-    <option value="">--</option>
-    <option value="AL">AL</option>
-    <option value="AK">AK</option>
-    <option value="AZ">AZ</option>
-    <option value="AR">AR</option>
-    <option value="CA">CA</option>
-    <option value="CO">CO</option>
-    <option value="CT">CT</option>
-    <option value="DE">DE</option>
-    <option value="FL">FL</option>
-    <option value="GA">GA</option>
-    <option value="HI">HI</option>
-    <option value="ID">ID</option>
-    <option value="IL">IL</option>
-    <option value="IN">IN</option>
-    <option value="IA">IA</option>
-    <option value="KS">KS</option>
-    <option value="KY">KY</option>
-    <option value="LA">LA</option>
-    <option value="ME">ME</option>
-    <option value="MD">MD</option>
-    <option value="MA">MA</option>
-    <option value="MI">MI</option>
-    <option value="MN">MN</option>
-    <option value="MS">MS</option>
-    <option value="MO">MO</option>
-    <option value="MT">MT</option>
-    <option value="NE">NE</option>
-    <option value="NV">NV</option>
-    <option value="NH">NH</option>
-    <option value="NJ">NJ</option>
-    <option value="NM">NM</option>
-    <option value="NY">NY</option>
-    <option value="NC">NC</option>
-    <option value="ND">ND</option>
-    <option value="OH">OH</option>
-    <option value="OK">OK</option>
-    <option value="OR">OR</option>
-    <option value="PA">PA</option>
-    <option value="RI">RI</option>
-    <option value="SC">SC</option>
-    <option value="SD">SD</option>
-    <option value="TN">TN</option>
-    <option value="TX">TX</option>
-    <option value="UT">UT</option>
-    <option value="VT">VT</option>
-    <option value="VA">VA</option>
-    <option value="WA">WA</option>
-    <option value="WV">WV</option>
-    <option value="WI">WI</option>
-    <option value="WY">WY</option>
-</select>
-<button (click)="clearFilters()">Clear Filters</button>
+<h1 class="headerfont" style="text-align: center;">Search Events</h1>
+<div class="row searchBox">
+    <h2 class="headerfont subfont">Filters</h2>
+    <div class="col-4 ">
+        <div class="form-floating">
+            <input class="form-control" id="name" placeholder="comicon" type="text" [(ngModel)]="nameFilter" (input)="filterEvents()">
+            <label for="name">Event Name</label>
+        </div>
+    </div>
 
+    <div class="col-4">
+        <div class="form-floating">
+            <input class="form-control" id="city" placeholder="detroit" type="text" [(ngModel)]="cityFilter" (input)="filterEvents()">
+            <label for="city">City</label>
+        </div>
+    </div>
+
+    <div class="col-2">
+        <div class="form-floating">
+            <select class="form-control" placeholder="--" id="state" [(ngModel)]="stateFilter" (change)="filterEvents()">
+                <option value="">--</option>
+                <option value="AL">AL</option>
+                <option value="AK">AK</option>
+                <option value="AZ">AZ</option>
+                <option value="AR">AR</option>
+                <option value="CA">CA</option>
+                <option value="CO">CO</option>
+                <option value="CT">CT</option>
+                <option value="DE">DE</option>
+                <option value="FL">FL</option>
+                <option value="GA">GA</option>
+                <option value="HI">HI</option>
+                <option value="ID">ID</option>
+                <option value="IL">IL</option>
+                <option value="IN">IN</option>
+                <option value="IA">IA</option>
+                <option value="KS">KS</option>
+                <option value="KY">KY</option>
+                <option value="LA">LA</option>
+                <option value="ME">ME</option>
+                <option value="MD">MD</option>
+                <option value="MA">MA</option>
+                <option value="MI">MI</option>
+                <option value="MN">MN</option>
+                <option value="MS">MS</option>
+                <option value="MO">MO</option>
+                <option value="MT">MT</option>
+                <option value="NE">NE</option>
+                <option value="NV">NV</option>
+                <option value="NH">NH</option>
+                <option value="NJ">NJ</option>
+                <option value="NM">NM</option>
+                <option value="NY">NY</option>
+                <option value="NC">NC</option>
+                <option value="ND">ND</option>
+                <option value="OH">OH</option>
+                <option value="OK">OK</option>
+                <option value="OR">OR</option>
+                <option value="PA">PA</option>
+                <option value="RI">RI</option>
+                <option value="SC">SC</option>
+                <option value="SD">SD</option>
+                <option value="TN">TN</option>
+                <option value="TX">TX</option>
+                <option value="UT">UT</option>
+                <option value="VT">VT</option>
+                <option value="VA">VA</option>
+                <option value="WA">WA</option>
+                <option value="WV">WV</option>
+                <option value="WI">WI</option>
+                <option value="WY">WY</option>
+            </select>
+            <label for="state">State</label>
+        </div>  
+    </div>
+
+    <div class="col-2 align-self-center">
+        <button class="clearButton" (click)="clearFilters()">Clear Filters</button>
+    </div>
+</div>
+
+
+
+
+
+<div class="row">
 @for (e of filteredEvents; track $index) {
-    <app-events-details [displayEvent]="e"></app-events-details>
+    <div class="col-2 offset-3">
+        <app-events-details [displayEvent]="e"></app-events-details>
+    </div>
 }
+</div>

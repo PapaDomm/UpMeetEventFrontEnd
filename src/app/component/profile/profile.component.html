@@ -1,31 +1,79 @@
-<app-nav-bar></app-nav-bar>
+
 @if(userProfile.userId == undefined){
     <p>Loading</p>
 }
 @else{
-    <h1>{{userProfile.userName}}</h1> 
-    <p>{{userProfile.firstName}} {{userProfile.lastName}}</p>
-    <img [src]="createImgPath(userProfile.image.path)" >
+    <div class="row text-center" style="margin-top: 4rem;">
+        <h1 class="headerfont">{{userProfile.userName}}</h1> 
+    </div>
     
-    <p>{{userProfile.bio}}</p>
+    <div class="row text-center">
+        <p class="namefont">{{userProfile.firstName}} {{userProfile.lastName}}</p>
+    </div>
     
-    <ul>
-    @for(e of userProfile.events; track $index){
-        <h2><a routerLink="/Event/{{e.eventId}}">{{e.name}}</a></h2>
-        <img [src]="createImgPath(e.image.path)" >
-        <p>{{e.description}}</p>
-    }
-    </ul>
+    <div class="row">
+        <div class="col-3 offset-2">
+            <img class="userPic" [src]="createImgPath(userProfile.image.path)" >
+        </div>
+        <div class="col-2 align-self-center text-center">
+            <p class="userBio">{{userProfile.bio}}</p>
+        </div>
+    </div>
+    
+    
+    <div class="row text-center" style="margin-top: 4rem; margin-bottom: 4rem;">
+        <h2 class="headerfont subfont">Events {{userProfile.userName}} Favorited!</h2>
+    </div>
+    
+    <div class="row" style="margin-left: 28rem; margin-bottom: 2rem;">
+        @for(e of userProfile.events; track $index){
+            <div class="col-4" style="margin-bottom: 6rem;">
+                <app-events-details [displayEvent]="e"></app-events-details>
+                <!-- <div class="headerfont eventName eventNameBox" style="height: 8rem; align-items: end;">
+                    <h2 class="headerfont eventName"><a routerLink="/Event/{{e.eventId}}">{{e.name}}</a></h2>
+                </div>
+                
+                <img class="eventImg" [src]="createImgPath(e.image.path)" >
+                <div class="eventDescription">
+                    <p>{{e.description}}</p>
+                </div> -->
+            </div> 
+        }
+    </div>
+    
 }
 
 @if(activeUser().userId == userProfile.userId && activeUser().userId != undefined){
     @if(displayUserUpdateForm){
-        <p (click)="toggleDisplayUpdate()">Close</p>
-        <app-user-update-form></app-user-update-form>
+        <div class="row" style="margin-bottom: 2rem;">
+            <div class="col-1 offset-5">
+                <button class="openButton" (click)="toggleDisplayUpdate()">Close</button> 
+            </div>
+
+            <div class="col-1">
+                <button class="openButton" (click)="deleteUser()">Delete Account</button>
+            </div>
+            
+            
+        </div>
+        
+        <div style="margin-bottom: 2rem;">
+            <app-user-update-form (updateUser)="routeIdentifier()"></app-user-update-form>
+        </div>
+        
     }
     @else {
-        <p (click)="toggleDisplayUpdate()">Update User Info</p>
+        <div class="row" style="margin-bottom: 2rem;">
+            <div class="col-1 offset-5">
+                <button class="openButton" (click)="toggleDisplayUpdate()">Update User Info</button>
+            </div>
+
+            <div class="col-1">
+                <button class="openButton" (click)="deleteUser()">Delete Account</button>
+            </div>
+        </div>
+         
     }
-    <p (click)="deleteUser()">Delete Account</p>
+    
     
 }

@@ -1,0 +1,110 @@
+.eventTitle > h1{
+    margin-top: 2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.eventImg > img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75rem;
+    height: 50rem;
+    border-radius: 10px;
+    border: 5px #0C0D2F solid;
+}
+
+.eventDate > h3{
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.eventLocation > h2{
+    margin-top: 2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.eventDescription{
+    width: 40rem;
+    border: 2px solid black;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 1.5rem;
+    box-shadow: 1rem 1rem 1rem black;
+}
+
+.eventButton{
+    width: 40rem;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.eventButton > button{
+    border: 2px solid black;
+    background-color: #0C0D2F;
+    color: white;
+    border-radius: 10px;
+    width: 15rem;
+    margin-top: .2rem; 
+}
+
+.eventButton > button:hover{
+    background-color: #63DED2;
+    box-shadow: .1rem .1rem .1rem black;
+}
+
+.forms{
+    margin-bottom: 3rem;
+}
+
+.eventGuests{
+    margin-top: .5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25rem;
+    height: auto;
+    max-height: 50rem;
+    background-color: #44664B;
+    border: 1px solid black;
+    display: flex;
+    overflow: auto;
+    scrollbar-width: none;
+    flex: auto;
+}
+
+h3 {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.eventGuestsImg{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 100%;
+}
+
+.eventGuestsName:link{
+    margin-left: 2rem;
+    text-decoration: none;
+    color: #82E98A;
+}
+
+.eventGuestsName:visited{
+    text-decoration: none;
+    color: #82E98A;
+}
+
+.eventGuestsName:hover{
+    text-decoration: underline;
+    color: #EADF78;
+}
+
+.eventGuestsName:active{
+    text-decoration: underline;
+    color: blue;
+}

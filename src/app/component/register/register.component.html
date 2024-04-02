@@ -1,7 +1,39 @@
-<input type="text" [(ngModel)]="firstName">
-<input type="text" [(ngModel)]="lastName">
-<input type="text" [(ngModel)]="userName">
-<input type="text" [(ngModel)]="bio">
-<input type="password" [(ngModel)]="password">
-<input type="file" (change)="onFileSelected($event)">
-<button (click)="uploadUser()">Add New User</button>
+<div class="formBox">
+    <h1 class="col-4 offset-4 text-center headerfont" style="margin-top: 2rem;">New User Registration</h1>
+    <div class="col-4 offset-4 form-floating" style="margin-top: 4rem;">
+        <input class="form-control" id="firstname" placeholder="John" type="text" [(ngModel)]="firstName">
+        <label for="firstname">First Name</label>
+    </div>
+
+    <div class="col-4 offset-4 form-floating" style="margin-top: 2rem;">
+        <input class="form-control" id="lastname" placeholder="Smith" type="text" [(ngModel)]="lastName">
+        <label for="lastname">Last Name</label>
+    </div>
+
+    <div class="col-4 offset-4 form-floating" style="margin-top: 2rem;">
+        <input class="form-control" id="username" placeholder="Username" type="text" [(ngModel)]="userName">
+        <label for="username">UserName</label>
+    </div>
+
+    <div class="col-4 offset-4" style="margin-top: 2rem;">
+        <label for="bio">Bio</label>
+        <textarea class="form-control" placeholder="Tell us about yourself" id="bio" rows="3" [(ngModel)]="bio"></textarea>     
+    </div>
+
+    <div class="col-4 offset-4 form-floating" style="margin-top: 2rem;">
+        <input class="form-control" id="password" placeholder="password" type="password" [(ngModel)]="password">
+        <label for="password">Password</label>
+    </div>
+    
+    <div class="row" style="margin-top: 2rem;">
+        <div class="col-2 offset-4">
+            <input type="file" (change)="onFileSelected($event)">
+        </div>
+
+        <div class="col-2" style="margin-left: 3rem;">
+            <button class="formButton" (click)="uploadUser()">Add New User</button>
+        </div>
+    </div>
+    
+    
+</div>

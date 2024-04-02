@@ -1,0 +1,28 @@
+.headerImg{
+    width: 10rem;
+    height: 10rem;
+    margin-left: 2rem;
+}
+.headerClass{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    height: 10rem;
+    border-bottom: 2px solid black;
+    /* background-image: linear-gradient(to top left, #82E98A, #44664B, #EADF78); */
+    background-color: white;
+}
+
+.headerClassBig{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    height: 14rem;
+    border-bottom: 2px solid black;
+    /* background-image: linear-gradient(to top left, #82E98A, #44664B, #EADF78); */
+    background-color: white;
+}
+
+.col-4{
+    padding: 0;
+}

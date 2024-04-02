@@ -1,0 +1,18 @@
+.eventButton{
+    border: 2px solid black;
+    background-color: #0C0D2F;
+    color: white;
+    border-radius: 10px;
+    width: 15rem;
+    margin-top: .2rem; 
+    margin-left: 5rem;
+}
+
+.eventButton:hover{
+    background-color: #63DED2;
+    box-shadow: .1rem .1rem .1rem black;
+}
+
+.headerfont{
+    font-size: 8rem;
+}

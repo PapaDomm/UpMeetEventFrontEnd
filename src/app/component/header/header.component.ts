@@ -11,5 +11,19 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  
+
+  loginForm : boolean = false;
+
+  changeClass():string{
+    if(!this.loginForm){
+      return "container-fluid mx-0 headerClass"
+    }
+    else{
+      return "container-fluid mx-0 headerClassBig"
+    }
+  }
+
+  loginChange(formDisplay : boolean){
+    this.loginForm = formDisplay;
+  }
 }

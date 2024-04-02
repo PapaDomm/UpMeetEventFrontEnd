@@ -1,28 +1,58 @@
-<app-nav-bar></app-nav-bar>
-<h1>{{displayEvent.name}}</h1>
-<img [src]="createImgPath(displayEvent.image.path)">
-<h2>{{displayEvent.city}},{{displayEvent.state}}</h2>
-<h3>From - {{displayEvent.startDate | date : 'shortDate'}} to {{displayEvent.endDate | date : 'shortDate'}}</h3>
-<p>About: {{displayEvent.description}}</p>
+
+<div class="eventTitle">
+    <h1 class="headerfont">{{displayEvent.name}}</h1>
+</div>
+
+<div class="eventImg">
+    <img [src]="createImgPath(displayEvent.image.path)">
+</div>
+
+<div class="eventLocation">
+    <h2 class="headerfont">{{displayEvent.city}},{{displayEvent.state}}</h2>
+</div>
+
+
+<div class="eventDate">
+    <h3>From - {{displayEvent.startDate | date : 'shortDate'}} to {{displayEvent.endDate | date : 'shortDate'}}</h3>
+</div>
+
+<div class="eventDescription">
+    <p>About our event:</p>
+    <p>{{displayEvent.description}}</p>
+</div>
+
 @if(isLoggedIn()){
     @if(!containsEvent()){
-        <button (click)="addToFavs(displayEvent.eventId)">Add to Favorites</button> 
+        <div class="eventButton favorites">
+            <button (click)="addToFavs(displayEvent.eventId)">Add to Favorites</button> 
+        </div>
+        
     }
     @else {
-        <button (click)="removeFavs(displayEvent.eventId)">Remove from Favorites</button>
+        <div class="eventButton favorites">
+            <button (click)="removeFavs(displayEvent.eventId)">Remove from Favorites</button>
+        </div>
     }
 }
-@if(displayEvent.users.length > 0){
-    <h3>Who's Going?</h3>
-}
-<ul>
-@for(user of displayEvent.users; track $index){
-    <li><img [src]="createImgPath(user.image.path)"><a routerLink="/Profile/{{user.userId}}">{{user.userName}}</a></li>
-}
-</ul>
 
-<button (click)="deleteEvent()">Delete Event?</button>
-<button (click)="toggleFormDisplay()">Show Update Form?</button>
+    @if(displayEvent.users.length > 0){
+        <h3>Who's Going?</h3>
+    }
+    <div class="eventGuests">
+    <ul>
+    @for(user of displayEvent.users; track $index){
+        <li><img class="eventGuestsImg" [src]="createImgPath(user.image.path)"><a class="eventGuestsName" routerLink="/Profile/{{user.userId}}">{{user.userName}}</a></li>
+    }
+    </ul>
+    </div>
+
+<div class="eventButton">
+    <button class="eventButton forms" (click)="deleteEvent()">Delete Event?</button>
+    <button class="eventButton forms" (click)="toggleFormDisplay()">Show Update Form?</button>
+</div>
+
 @if(formDisplay){
-    <app-event-form [targetId]="displayEvent.eventId"></app-event-form>
+    <div style="margin-bottom: 2rem;">
+        <app-event-form [targetId]="displayEvent.eventId" (outputChange)="routeIdentifier()"></app-event-form>
+    </div>
 }

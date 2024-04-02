@@ -5,11 +5,13 @@ import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/rout
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { UserUpdateFormComponent } from '../user-update-form/user-update-form.component';
 import { Observable, catchError, throwError } from 'rxjs';
+import { HeaderComponent } from '../header/header.component';
+import { EventsDetailsComponent } from '../events-details/events-details.component';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [RouterLink, NavBarComponent, UserUpdateFormComponent],
+  imports: [HeaderComponent, RouterLink, NavBarComponent, UserUpdateFormComponent, EventsDetailsComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })

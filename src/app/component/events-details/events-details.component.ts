@@ -23,7 +23,7 @@ export class EventsDetailsComponent {
   @Input() displayEvent = {} as EventModel;
 
   createImgPath(path : string):string{
-    return `${this.eventService.url}${path}`;
+    return `${this.eventService.url}${path}`; 
   }
 
   toggleUserDisplay(){
@@ -64,5 +64,20 @@ export class EventsDetailsComponent {
 
   activeUser():UserModel{
     return this.userService.activeUser;
+  }
+
+  cardClass():string{
+    if(this.isLoggedIn() && this.displayUser){
+      return 'card cardUserAlter'
+    }
+    else if(this.isLoggedIn()){
+      return 'card cardAlter'
+    }
+    else if(this.displayUser){
+      return 'card cardUserDisplay'
+    }
+    else{
+      return 'card'
+    }
   }
 }

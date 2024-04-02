@@ -7,11 +7,12 @@ import { RouterLink } from '@angular/router';
 import { EventModel } from '../../models/event';
 import { DatePipe } from '@angular/common';
 import { EventsDetailsComponent } from '../events-details/events-details.component';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [NavBarComponent, FormsModule, RouterLink, DatePipe, EventsDetailsComponent],
+  imports: [NavBarComponent, FormsModule, RouterLink, DatePipe, EventsDetailsComponent, HeaderComponent],
   templateUrl: './search.component.html',
   styleUrl: './search.component.css'
 })

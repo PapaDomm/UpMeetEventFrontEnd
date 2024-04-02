@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, input } from '@angular/core';
 import { EventService } from '../../services/event/event.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +14,7 @@ export class EventFormComponent {
   constructor(private eventService:EventService, private router: Router){}
 
   @Input() targetId = 0;
+  @Output() outputChange = new EventEmitter();
 
   fileName : string = '';
 
@@ -64,7 +65,7 @@ export class EventFormComponent {
       this.expired = '';
       this.eventForm = new FormData();
       // Change to reroute back to event page
-      this.router.navigate(["/Home"])
+      this.outputChange.emit();
     })
   }
 }

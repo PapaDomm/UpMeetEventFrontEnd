@@ -1,0 +1,95 @@
+.form-floating{
+    margin-bottom: .5rem;
+}
+
+.openButton{
+    border: 2px solid black;
+    background-color: #0C0D2F;
+    color: white;
+    border-radius: 10px;
+    width: 5rem;
+    margin-top: .2rem;
+}
+
+.openButton:hover{
+    background-color: #63DED2;
+    box-shadow: .1rem .1rem .1rem black;
+}
+
+.closeButton{
+    border: 2px solid black;
+    background-color: #0C0D2F;
+    color: white;
+    border-radius: 10px;
+    width: 5rem;
+    margin-top: .2rem;
+    margin-bottom: .2rem;
+}
+
+.closeButton:hover{
+    background-color: #63DED2;
+    box-shadow: .1rem .1rem .1rem black;
+}
+
+.loginButton{
+    border: 2px solid black;
+    background-color: #0C0D2F;
+    color: white;
+    border-radius: 10px;
+    width: 5rem;
+    margin-top: .2rem;
+}
+
+.loginButton:hover{
+    background-color: #63DED2;
+    box-shadow: .1rem .1rem .1rem black;
+}
+
+
+.registerButton{
+    border: 2px solid black;
+    background-color: #0C0D2F;
+    color: white;
+    border-radius: 10px;
+    width: 15rem;
+    margin-top: .2rem;
+    margin-left: 1.3rem;
+}
+
+.registerButton:hover{
+    background-color: #63DED2;
+    box-shadow: .1rem .1rem .1rem black;
+}
+
+.logoutButton{
+    border: 2px solid black;
+    background-color: #0C0D2F;
+    color: white;
+    border-radius: 10px;
+    width: 5rem;
+    margin-top: .2rem;
+}
+
+.logoutButton:hover{
+    background-color: #63DED2;
+    box-shadow: .1rem .1rem .1rem black;
+}
+
+.userImg{
+    display: block;
+    float: left;
+    margin-top: 1.2rem;
+    border-radius: 100%;
+    height: 4rem;
+    width: 4rem;
+    border: .5px solid rgba(33, 255, 244, 0.733);
+}
+
+.displayName{
+    margin-top: 2.2rem;
+    margin-left: 6rem;
+    margin-bottom: 3rem;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}

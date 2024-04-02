@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { UserService } from '../../services/user/user.service';
 import { FormsModule } from '@angular/forms';
 import { UserModel } from '../../models/user';
@@ -14,6 +14,8 @@ import { Router, RouterLink } from '@angular/router';
 export class LoginComponent {
   constructor(private userService: UserService, private router: Router){}
 
+  @Output() formDisplay = new EventEmitter<boolean>();
+
   username : string = '';
   password : string = '';
 
@@ -21,6 +23,7 @@ export class LoginComponent {
 
   toggleDisplay(){
     this.displayForm = !this.displayForm;
+    this.formDisplay.emit(this.displayForm);
   }
 
   login(username : string, password : string){
@@ -30,6 +33,7 @@ export class LoginComponent {
       this.displayForm = false;
       this.username = '';
       this.password = '';
+      this.formDisplay.emit(this.displayForm)
       this.router.navigate(["/Home"])
     })
     
@@ -48,4 +52,9 @@ export class LoginComponent {
   isLoggedIn(){
     return this.userService.isLoggedIn;
   }
+
+  createImgPath(path : string):string{
+    return `${this.userService.url}${path}`;
+  }
+
 }

@@ -1,13 +1,26 @@
-<app-header></app-header>
-<p>Home</p>
+
+<h1 class="headerfont" style="text-align: center;">Our Events</h1>
 <app-events-list></app-events-list>
 
 <br>
 @if(addEventDisplay){
-    <button (click)="toggleAddEventForm()">Close</button>
+    <div class="row">
+        <div class="col-4 offset-5" style="margin-bottom: 2rem;">
+            <button class="eventButton" (click)="toggleAddEventForm()">Close</button>
+        </div>
+    </div>
+    
     <br>
-    <app-add-event-form></app-add-event-form>
+    <div style="margin-bottom: 2rem;">
+        <app-add-event-form></app-add-event-form>
+    </div>
+    
 }
 @else {
-    <button (click)="toggleAddEventForm()">Add New Event</button>
+    <div class="row">
+        <div class="col-4 offset-5" style="margin-bottom: 2rem;">
+            <button class="eventButton" (click)="toggleAddEventForm()">Add New Event</button>
+        </div>
+    </div>
+    
 }

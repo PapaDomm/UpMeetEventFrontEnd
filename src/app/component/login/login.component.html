@@ -1,19 +1,29 @@
 @if(!displayForm){
     @if(!isLoggedIn()){
-        <p (click)="toggleDisplay()">Login</p>
+        <button class="openButton" (click)="toggleDisplay()">Login</button>
     }
     @else {
-        <p>{{activeUser().userName}}</p>
-        <p (click)="logout()">Logout</p>
+        <img class="userImg" [src]="createImgPath(activeUser().image.path)"><p class="displayName">{{activeUser().userName}}</p>
+        <button class="logoutButton" (click)="logout()">Logout</button>
     }
 }
 @else {
-    <p (click)="toggleDisplay()">Close</p>
-    <input type="text" [(ngModel)]="username">
-    <input type="password" [(ngModel)]="password">
+    <button class="closeButton" (click)="toggleDisplay()">Close</button>
+    <div class="form-floating">
+        <input class="form-control form-control-sm" type="text" id="user" placeholder="someone"[(ngModel)]="username">
+        <label for="someone">Username</label>
+    </div>
+    <div class="form-floating">
+        <input class="form-control form-control-sm" type="password" id="pass" placeholder="12345" [(ngModel)]="password">
+        <label for="pass">Password</label>
+    </div>
+        
+    
+    
 
-    <button routerLink="/RegisterUser">New User? Register Here</button>
-    <button (click)="login(username, password)">Login</button>
+    
+    <button class="loginButton" (click)="login(username, password)">Login</button>
+    <button class="registerButton" routerLink="/RegisterUser">New User? Register Here</button>
 }
 
 

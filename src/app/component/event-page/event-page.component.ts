@@ -8,11 +8,12 @@ import { DatePipe } from '@angular/common';
 import { EventFormComponent } from '../event-form/event-form.component';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { UserFavorite } from '../../models/user-favorite';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-event-page',
   standalone: true,
-  imports: [DatePipe, RouterLink, EventFormComponent, NavBarComponent],
+  imports: [DatePipe, RouterLink, EventFormComponent, NavBarComponent, HeaderComponent],
   templateUrl: './event-page.component.html',
   styleUrl: './event-page.component.css'
 })

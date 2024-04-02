@@ -15,10 +15,13 @@ export class EventsListComponent {
 
   eventList : EventModel[] = [];
 
-  
+  empty : string[] = ['0', '0']
 
   ngOnInit(){
     this.getAllEvents();
+    this.eventService.newEvent.subscribe((response) => {
+      this.eventList.push(response);
+    })
   }
 
   getAllEvents(){
@@ -26,4 +29,5 @@ export class EventsListComponent {
       this.eventList = response;
     })
   }
+
 }

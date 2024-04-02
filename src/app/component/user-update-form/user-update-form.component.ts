@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { UserService } from '../../services/user/user.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -13,6 +13,9 @@ import { UserModel } from '../../models/user';
 })
 export class UserUpdateFormComponent {
   constructor(private userService:UserService, private router: Router){}
+
+  @Output() updateUser = new EventEmitter();
+  //OutputEvent To API call
 
   fileName : string = '';
 
@@ -55,7 +58,7 @@ export class UserUpdateFormComponent {
       this.password = '';
       this.userForm = new FormData();
       this.userService.activeUser = response;
-      this.router.navigate([`/Profile/${this.activeUser().userId}`])
+      this.updateUser.emit();
     })
   }
 

@@ -1,13 +1,14 @@
-<div class="container-fluid mx-0">
+<div [class]="changeClass()">
     <div class="row">
         <div class="col-4">
             <app-nav-bar></app-nav-bar>
         </div>
-        <div class="col-4 offset-1">
-            <h1>UpMeetEvents!</h1>
+        <div class="col-2 offset-1  text-center">
+            <!-- <h1 style="text-shadow: 1rem 1rem 1rem blue; border: 1px solid black; padding: 1rem 0rem 1.5rem 0rem; margin-top: 1rem;">UpMeetEvents!</h1> -->
+            <img class="headerImg" [src]="'https://localhost:7193/Images/UpMEETVENTS2.png'">
         </div>
-        <div class="col-3 justify-content-end">
-            <app-login></app-login>
+        <div class="col-2 offset-3">
+            <app-login (formDisplay)="loginChange($event)"></app-login>
             
         </div>
     </div>

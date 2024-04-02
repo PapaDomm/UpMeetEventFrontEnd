@@ -6,7 +6,7 @@ import { EventPageComponent } from './component/event-page/event-page.component'
 import { SearchComponent } from './component/search/search.component';
 
 export const routes: Routes = [
-    {path: "", component: HomeComponent},
+    {path: "", component: HomeComponent, title: "Home"},
     {path: "Home", component: HomeComponent},
     {path: "Profile/:id", component: ProfileComponent},
     {path: "Event/:id", component: EventPageComponent},
